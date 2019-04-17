@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- CSS -->
+    <!-- load up bootstrap and add some spacing -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+        body         { padding-top:50px; }
+        form, pre    { margin-bottom:50px; }
+    </style>
+
+    <!-- JS -->
+    <!-- load up angular and our custom script -->
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<!-- apply our angular app and controller -->
+<body ng-app="formApp" ng-controller="formController">
+<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <form>
+     
+        <!-- MULTIPLE CHECKBOXES -->
+        <label>Рік видання</label>
+        <div class="form-group" >
+            <label class="checkbox">
+                <input id="one" type="checkbox" onchange="fun1()" name="yearPublication" ng-model="formData.year.seventys"> 1971-1980
+            </label>
+            <label class="checkbox">
+                <input id="tho" type="checkbox" onchange="fun1()" name="yearPublication" ng-model="formData.year.eightys"> 1981-1990
+            </label>
+            <label class="checkbox">
+                <input id="tree" type="checkbox" onchange="fun1()" name="yearPublication" ng-model="formData.year.ninetys"> 1991-2000
+            </label>
+            <label class="checkbox">
+                <input id="for" type="checkbox" onchange="fun1()" name="yearPublication" ng-model="formData.year.zerovs"> 2001-2010
+            </label>
+        </div>
+        
+        <!-- CUSTOM VALUE CHECKBOXES -->
+        <label>Видавництво</label>
+        <div class="form-group">
+            <label class="checkbox">
+                <input type="checkbox" name="publication" ng-model="formData.name.prosvita"> “Просвіта”
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="publication" ng-model="formData.name.bookcheff"> “BOOKCHEF”
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="publication" ng-model="formData.name.pidruchnyki"> “Підручники і посібники”
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="publication" ng-model="formData.name.ranok"> “РАНОК”
+            </label>
+        </div>        
+    </form>    
+    <!-- SHOW OFF OUR FORMDATA OBJECT -->
+    <h2>Sample Form Object</h2>
+    <pre>
+        {{ formData }}
+    </pre>
+    
+    
+</div>
+</body>
+</html>
